@@ -1,0 +1,288 @@
+/* --- General Reset & Styling --- */ 
+* { 
+    margin: 0; 
+    padding: 0; 
+    box-sizing: border-box; 
+} 
+
+body { 
+    font-family: Arial, sans-serif; 
+    line-height: 1.6; 
+    background-color: #f4f4f4; 
+    color: #333; 
+} 
+
+a { 
+    text-decoration: none; 
+    color: inherit; 
+} 
+
+ul { 
+    list-style: none; 
+} 
+
+.btn { 
+    display: inline-block; 
+    padding: 10px 20px; 
+    background: #333; 
+    color: #fff; 
+    border-radius: 5px; 
+    transition: background 0.3s; 
+} 
+
+.btn:hover { 
+    background: #555; 
+} 
+
+/* --- Header & Navigation Styling --- */ 
+header { 
+    background: #fff; 
+    color: #333; 
+    padding: 1rem 5%; 
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center; 
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1); 
+} 
+
+/* Add these styles to your style.css file */
+
+.site-logo {
+    /* Define a fixed width and height for a perfect circle */
+    width: 50px;
+    height: 50px;
+    
+    /* This is the key property to make it round */
+    border-radius: 50%;
+    
+    /* Ensures the image fills the circular container nicely */
+    object-fit: cover;
+    
+    /* Optional: Add a border */
+    border: 2px solid #333;
+}
+
+/* Optional: Adjust the main header alignment slightly if needed */
+header .logo {
+    display: flex;
+    align-items: center;
+    /* Remove any previous font-size/font-weight rules that applied to the text */
+}
+
+nav ul { 
+    display: flex; 
+} 
+
+nav ul li a { 
+    padding: 0.5rem 1rem; 
+    display: block; 
+    transition: color 0.3s; 
+} 
+
+nav ul li a:hover, nav ul li a.active { 
+    color: #007BFF; /* Highlight color for active link */ 
+} 
+
+/* --- Search Bar Styling --- */ 
+.search-container { 
+    display: flex; 
+    align-items: center; 
+    border: 1px solid #ccc; 
+    border-radius: 20px; 
+    overflow: hidden; 
+    margin-right: 1rem; 
+} 
+
+.search-container input { 
+    padding: 8px 12px; 
+    border: none; 
+    outline: none; 
+    font-size: 0.9rem; 
+} 
+
+.search-container button {
+    padding: 8px 12px;
+    border: none;
+    /* Change background to match the header background or white */
+    background: #fff; /* Changed from #007BFF to white or #fff */
+    color: #333; /* Change icon color to match text color */
+    cursor: pointer;
+    /* Ensure no extra border on the left if the input has one */
+    border-left: none;
+    /* The invalid nested block was here and has been removed */
+}
+
+/* DEBUGGED: Moved the button hover effect here as a standalone rule */
+.search-container button:hover {
+    color: #007BFF; /* Makes the icon blue on hover */
+    background: #fff; /* Keeps the background white */
+}
+
+
+.header-icons { 
+    display: flex; 
+    align-items: center; 
+} 
+
+.cart-icon, .user-icon { 
+    font-size: 1.2rem; 
+    margin-left: 1rem; 
+    position: relative; 
+    color: #333; 
+} 
+
+.cart-icon span { 
+    position: absolute; 
+    top: -5px; 
+    right: -10px; 
+    background: red; 
+    color: white; 
+    border-radius: 50%; 
+    padding: 2px 6px; 
+    font-size: 0.7rem; 
+} 
+
+/* --- Main Content & Product Styling --- */ 
+main { 
+    padding: 2rem 5%;
+}
+
+/* Corrected background image property name */
+.hero { 
+    background-image: url('1764805383819.jpg'); 
+    background-size: cover; /* Added for better image display */
+    background-position: center; /* Added for better image display */
+    color: white; 
+    padding: 4rem 2rem; 
+    text-align: center; 
+    border-radius: 10px; 
+    margin-bottom: 2rem; 
+} 
+
+.hero h1 { 
+    font-size: 2.5rem; 
+    margin-bottom: 0.5rem; 
+} 
+
+.hero p { 
+    margin-bottom: 1.5rem; 
+} 
+
+.products-grid { 
+    display: grid; 
+    /* !!! MODIFIED FOR 2 COLUMNS !!! */
+    grid-template-columns: 1fr 1fr; 
+    gap: 2rem; 
+} 
+
+.products-grid h2 { 
+    grid-column: 1 / -1; /* Span across all columns */ 
+    margin-bottom: 1rem; 
+    text-align: center; 
+} 
+
+.product-card { 
+    background: #fff; 
+    padding: 1rem; 
+    border-radius: 8px; 
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1); 
+    text-align: center; 
+    transition: transform 0.3s; 
+    display: flex; 
+    flex-direction: column; 
+    height: 100%; 
+} 
+
+.product-card:hover { 
+    transform: translateY(-5px); 
+} 
+
+.product-card img { 
+    width: 100%; 
+    height: auto; 
+    border-radius: 5px; 
+    margin-bottom: 1rem; 
+    /* Removed 'height: 100%;' which caused layout issues within flex parent */
+} 
+
+.product-card h3 { 
+    font-size: 1.1rem; 
+    margin-bottom: 0.5rem; 
+} 
+
+.product-card .price { 
+    font-size: 1.2rem; 
+    font-weight: bold; 
+    color: #e67e22; 
+    margin-bottom: 1rem; 
+} 
+
+/* --- Footer Styling --- */ 
+footer { 
+    text-align: center; 
+    padding: 1rem; 
+    background: #333; 
+    color: white; 
+    margin-top: 2rem; 
+} 
+
+/* General Section Styling for About/Contact */ 
+main section { 
+    padding: 60px 5%; 
+    text-align: center; 
+} 
+
+/* About Section Specifics */ 
+.about-section { 
+    background-color: #f9f9f9; 
+} 
+
+.about-section h2, .contact-section h2 { 
+    margin-bottom: 20px; 
+    font-size: 2em; 
+    color: #333; 
+} 
+
+.about-section p, .contact-section p { 
+    margin-bottom: 10px; 
+    color: #555; 
+} 
+
+/* Contact Section Specifics */ 
+.contact-section { 
+    background-color: #fff; 
+} 
+
+.contact-details p { 
+    margin: 5px 0; 
+} 
+
+.contact-details a { 
+    color: #007BFF; 
+    text-decoration: none; 
+} 
+
+.contact-details a:hover { 
+    text-decoration: underline; 
+} 
+
+/* Social Icons Styling */ 
+.social-icons { 
+    margin-top: 20px;
+} 
+
+.social-icons a { 
+    color: #333; 
+    font-size: 24px; 
+    margin: 0 10px; 
+    transition: color 0.3s; 
+} 
+
+.social-icons a:hover {
+    color: #007BFF; /* Added a hover effect */
+}
+
+/* Consolidated .fab rule to be accessible globally */
+.fab {
+    font-weight: 900;
+}
